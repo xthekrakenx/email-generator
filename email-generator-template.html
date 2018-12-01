@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Email Verbiage Generator</title>
+  <!--
+
+	Another fine...
+
+	#############################################################################################################################################
+	## |||| https://mykraken.tech |||| https://mykraken.tech |||| https://mykraken.tech |||| https://mykraken.tech |||| https://mykraken.tech  ##
+	#############################################################################################################################################
+  ##    /$$$$$$        /$$                               /$$$$$$$  /$$           /$$                                                         ##
+  ##  /$$__  $$      | $$                              | $$__  $$|__/          | $$                                                          ##
+  ## | $$  \ $$  /$$$$$$$  /$$$$$$  /$$$$$$/$$$$       | $$  \ $$ /$$  /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$  /$$$$$$$   ##
+  ## | $$$$$$$$ /$$__  $$ |____  $$| $$_  $$_  $$      | $$  | $$| $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ /$$_____/ /$$__  $$| $$__  $$  ##
+  ## | $$__  $$| $$  | $$  /$$$$$$$| $$ \ $$ \ $$      | $$  | $$| $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/|  $$$$$$ | $$  \ $$| $$  \ $$  ##
+  ## | $$  | $$| $$  | $$ /$$__  $$| $$ | $$ | $$      | $$  | $$| $$| $$      | $$_  $$ | $$_____/| $$       \____  $$| $$  | $$| $$  | $$  ##
+  ## | $$  | $$|  $$$$$$$|  $$$$$$$| $$ | $$ | $$      | $$$$$$$/| $$|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       /$$$$$$$/|  $$$$$$/| $$  | $$  ##
+  ## |__/  |__/ \_______/ \_______/|__/ |__/ |__/      |_______/ |__/ \_______/|__/  \__/ \_______/|__/      |_______/  \______/ |__/  |__/  ##
+	#############################################################################################################################################
+	## https://mykraken.tech |||| https://mykraken.tech |||| https://mykraken.tech |||| https://mykraken.tech |||| https://mykraken.tech ||||  ##
+	#############################################################################################################################################
+
+	...Creation.
+
+	-->
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-gJWVjz180MvwCrGGkC4xE5FjhWkTxHIR/+GgT8j2B3KKMgh6waEjPgzzh7lL7JZT" crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+  <!-- Nav -->
+  <header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="./email-generator-template.html"><i class="fa fa-envelope text-warning pr-2"></i> Email Verbiage Generator</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./email-generator-template.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 pr-2">
+          <span id="greeting" class="text-warning font-weight-bold"></span>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <form id="emailGeneratorForm" onsubmit="return false;">
+    <div class="container font-weight-bold">
+      <div class="row pt-3">
+        <div class="col">
+          <div class="form-group py-2">
+            <div class="card border-primary mb-3">
+              <div class="card-header text-info"><h4><i class="fa fa-envelope text-warning pr-2"></i> Email Variables</h4></div>
+              <div class="card-body">
+                <div class="row pb-3">
+                  <div class="col">
+                    <label>IC Name</label>
+                    <select id="icName" class="custom-select">
+                      <option selected="">Select IC</option>
+                      <option value="Jonathan Doe">Jonathan Doe</option>
+                      <option value="Jane Doe">Jane Doe</option>
+                      <option value="Jon Dough">Jon Dough</option>
+                      <option value="Jane Dough">Jane Dough</option>
+                      <option value="Kitty Ipsum">Kitty Ipsum</option>
+                    </select>
+                  </div>
+                  <div class="col">
+                    <label>SR#</label>
+                    <input type="text" class="form-control" id="srNum" placeholder="Service Request #">
+                  </div>
+                  <div class="col">
+                    <label>Short Description</label>
+                    <input type="text" class="form-control" id="shortDesc" placeholder="Short Project Description">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label>Client Name</label>
+                    <input type="text" class="form-control" id="clientName" placeholder="Client Name">
+                  </div>
+                  <div class="col">
+                    <label>Contact Name</label>
+                    <input type="text" class="form-control" id="contactName" placeholder="Contact Name">
+                  </div>
+                  <div class="col">
+                    <label>Service Consultant</label>
+                    <input type="text" class="form-control" id="serviceName" placeholder="Service Consultant">
+                  </div>
+                </div>
+								<div class="row text-center">
+									<div class="col pt-4 pb-2">
+										<button type="button" class="btn text-light alert-success btn-primary" onclick="GenerateEmails()">Create Templates</button>&nbsp;&nbsp;<button type="button" class="btn text-light alert-danger btn-primary px-3" onclick="ResetForm()"> Reset </button>
+									</div>
+								</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card border-primary mb-3">
+            <div class="card-header text-info"><h4><i class="fa fa-envelope text-warning pr-2"></i> Email Template</h4></div>
+            <div class="card-body">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active text-info" data-toggle="tab" href="#ic">IC Assignment</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-info" data-toggle="tab" href="#scc">SCC Notify</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-info" data-toggle="tab" href="#client">Client Notify</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-info" data-toggle="tab" href="#uat">UAT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-info" data-toggle="tab" href="#internalAssignmentDelay">Assignment Delay (Internal)</a>
+                </li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade show active" id="ic">
+                  <div class="form-group pt-2">
+                    <label>IC Assignment Email Subject</label>
+                    <span class="input-group-append">
+                    <input type="text" class="form-control" id="icSubject" placeholder="Subject">
+                    <button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('icSubject')">Copy</button>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleTextarea">IC Assignment Email Body</label>
+                    <textarea class="form-control" id="icBody" rows="3"></textarea>
+                    <button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('icBody')">Copy</button>
+                  </div>
+                </div>
+                <div class="tab-pane fadepb-2" id="scc">
+									<div class="form-group pt-2">
+                    <label>SCC Notify Email Subject</label>
+                    <span class="input-group-append">
+                    <input type="text" class="form-control" id="sccSubject" placeholder="Subject">
+                    <button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('sccSubject')">Copy</button>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleTextarea">SCC Notify Email Body</label>
+                    <textarea class="form-control" id="sccBody" rows="3"></textarea>
+                    <button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('sccBody')">Copy</button>
+                  </div>
+                </div>
+                <div class="tab-pane fadepb-2" id="client">
+									<div class="form-group pt-2">
+										<label>Client Notify Email Subject</label>
+										<span class="input-group-append">
+										<input type="text" class="form-control" id="clientSubject" placeholder="Subject">
+										<button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('clientSubject')">Copy</button>
+										</span>
+									</div>
+									<div class="form-group">
+										<label for="exampleTextarea">Client Notify Email Body</label>
+										<textarea class="form-control" id="clientBody" rows="3"></textarea>
+										<button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('clientBody')">Copy</button>
+									</div>
+                </div>
+                <div class="tab-pane fadepb-2" id="uat">
+									<div class="form-group pt-2">
+										<label>UAT Email Subject</label>
+										<span class="input-group-append">
+										<input type="text" class="form-control" id="uatSubject" placeholder="Subject">
+										<button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('uatSubject')">Copy</button>
+										</span>
+									</div>
+									<div class="form-group">
+										<label for="exampleTextarea">UAT Email Body</label>
+										<textarea class="form-control" id="uatBody" rows="3"></textarea>
+										<button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('uatBody')">Copy</button>
+									</div>
+                </div>
+                <div class="tab-pane fadepb-2" id="internalAssignmentDelay">
+									<div class="form-group pt-2">
+										<label>Assingment Delay (Internal) Email Subject</label>
+										<span class="input-group-append">
+										<input type="text" class="form-control" id="internalDelaySubject" placeholder="Subject">
+										<button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('internalDelaySubject')">Copy</button>
+										</span>
+									</div>
+									<div class="form-group">
+										<label for="exampleTextarea">Assingment Delay (Internal) Email Body</label>
+										<textarea class="form-control" id="internalDelayBody" rows="3"></textarea>
+										<button class="btn text-light input-group-text alert-info btn-primary" onclick="AreaCopy('internalDelayBody')">Copy</button>
+									</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Bootstrap/jQuery/etc -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <!-- Email Generator Magic! -->
+  <script>
+
+    // Instantiate today as a var.
+    var today = new Date()
+
+    // Initialize days of week array
+    var weekday = new Array(7);
+    weekday[0] =  "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    // Grab day value based off of day indice
+    var dayOfWeek = weekday[today.getDay()];
+
+    // Build out time of day messages.
+    var morningMsg = 'Good Morning - Happy ' + dayOfWeek + '! :)';
+    var afternoonMsg = 'Good Afternoon - Happy ' + dayOfWeek + '! :)';
+    var eveningMsg = 'Good Evening - Happy ' + dayOfWeek + '! :)';
+
+    //Grab the hour value of current time
+    var curHr = today.getHours()
+
+    //Initialize Greeting Message variable and align appropriate message based off of time of day
+    var greetingMsg;
+    if (curHr < 12) {
+      console.log(morningMsg)
+      greetingMsg = morningMsg;
+    } else if (curHr < 18) {
+      console.log(afternoonMsg)
+      greetingMsg = afternoonMsg;
+    } else {
+      console.log(eveningMsg)
+      greetingMsg = eveningMsg;
+    }
+
+    //Display the greeting message in nav
+    document.getElementById("greeting").innerHTML = greetingMsg;
+
+    //Generate email templates passing the timeOfDay generated greetingMsg as a param for use within function.
+		function GenerateEmails(msgGreeting = greetingMsg){
+
+			//Initialize vars with upper form data
+			var icName = document.getElementById("icName").value; //This is basically my resource pool - hard carded HTML options.
+			var srNum = document.getElementById("srNum").value; //This is my CRM ticketing system number
+			var shortDesc = document.getElementById("shortDesc").value; //This is a short project description (used in subject line)
+			var clientName = document.getElementById("clientName").value; //This is the name of company (used in subject line)
+			var contactName = document.getElementById("contactName").value; //This is the client contact's first name (used in body)
+			var serviceName = document.getElementById("serviceName").value; //This is the 1st tier support rep's name (used in body)
+			var greetingMsg = greetingMsg;
+
+			//Initialize accumulator vars for lower form data
+			var icSubject;
+			var icBody;
+			var sccSubject;
+			var sccBody;
+			var clientSubject;
+			var clientBody;
+			var uatSubject;
+			var uatBody;
+			var internalDelaySubject;
+			var internalDelayBody;
+
+			//Handle IC Template
+			icSubject = 'Re: Project Assignment | ' + clientName + ' (' + srNum + ')';
+			icBody = 'SR#: ' + srNum + '\r\n' + 'Client Name: ' + clientName + '\r\n' +  'Task: ' + shortDesc;
+			document.getElementById("icSubject").value = icSubject;
+			document.getElementById("icBody").value = icBody;
+
+			//Handle SCC Template
+			sccSubject = 'Re: Resource Assignment | ' + clientName + ' (' + srNum + ')';
+			sccBody = serviceName + '\r\n\r\n' + msgGreeting + ' I wanted to reach out to confirm that we have a resource identified for this project (' + icName + ') and that I will be engaging the client to get a kick off call setup ASAP. We look forward to getting this one wrapped up as quickly as we can for you!\r\n\r\n';
+			document.getElementById("sccSubject").value = sccSubject;
+			document.getElementById("sccBody").value = sccBody;
+
+			//Handle Client Template
+			clientSubject = 'Re: ' + clientName + ' (' + srNum + ') | ' + shortDesc + ' Project Kickoff';
+			clientBody = contactName + '\r\n\r\n' + msgGreeting + ' I am pleased to let you know that I have assigned a resource to your project and would like to obtain your availability for a kick off call to get this project underway. If you could provide me a few days/times next week that work best for you/your team, I will work to get an invite out.\r\n\r\nWe look forward to getting this project underway for you!\r\n\r\n';
+			document.getElementById("clientSubject").value = clientSubject;
+			document.getElementById("clientBody").value = clientBody;
+
+			//Handle UAT Template
+			uatSubject = 'Re: ' + clientName + ' (' + srNum + ') | ' + shortDesc + ' UAT Approval';
+			//Split uatBody initialize up into 2 steps due to length of string.
+			uatBody = contactName + '\r\n\r\n' + msgGreeting + ' Thank you for the opportunity to partner with you on this request. Please confirm that the configuration has been tested to your satisfaction by approving this UAT email.\r\n\r\n Thank you.\r\n\r\n';
+			document.getElementById("uatSubject").value = uatSubject;
+			document.getElementById("uatBody").value = uatBody;
+
+			//Handle Internal Assignment Delay Template
+			internalDelaySubject = 'Re: Project Assignment Delay | ' + clientName + ' (' + srNum + ')';
+			internalDelayBody = serviceName + '\r\n\r\n' + msgGreeting + ' I wanted to follow up on this project. We are diligently working on resource assignment but this project has not been assigned for configuration (yet). We are working as quickly as we can to identify a resource for this one and will reach back out ASAP as soon as we are able to get on aligned. Just to set realistic expectations - there is a bit of work we are working to cut through to reach this one however you have our commitment to work this one in as quickly as we can. We greatly appreciate your continued patience/partnership.\r\n\r\n';
+			document.getElementById("internalDelaySubject").value = internalDelaySubject;
+			document.getElementById("internalDelayBody").value = internalDelayBody;
+
+		}
+
+		//Area Copy Function - pass elementId name as a param (for form field to copy)
+		function AreaCopy(areaForCopy){
+
+			//Initialize var with data from HTML element - specified by passed param
+			var textForCopy = document.getElementById(areaForCopy);
+
+			//Select the field for copy
+			textForCopy.select();
+
+			//Execute copy command
+			document.execCommand("copy");
+
+		}
+
+		//Reset form fields to default
+		function ResetForm(){
+			document.getElementById("emailGeneratorForm").reset();
+		}
+
+  </script>
+
+</body>
+</html>
