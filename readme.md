@@ -5,7 +5,7 @@ This tool allows for rapid creation of email subject & body verbiage based off o
 
 ## Why This Tool Exists
 
-So my use case is simple. I send out a series of the same email "templates" multiple times per day and then multiple days per week. I pull the "variable" data from a variety of systems of record, and amounts to me jumping around to several screens (sometimes multiple times to the same screens) to grab the pieces of info needed to fill out my email templates manually. To add insult to injury - I am limited from a technology standpoint as it pertains to what I can use to address my problem. I needed a solution that could be run locally (not website/web server dependent) and had no real local dependencies beyond a web browser so decided to see what I could create with vanilla HTML/Javascript.
+So my use case is simple. I send out a series of the same email "templates" multiple times per day and then multiple days per week. I pull the "variable" data from a variety of systems of record which translates to me jumping around to multiple areas (sometimes multiple times to the same areas) to grab the pieces of info needed to fill out my email templates manually. To add insult to injury - I am limited from a technology standpoint as it pertains to what I can use to address my problem as I cannot install any software or access external websites. I needed a solution that could be executed locally and had no real local dependencies beyond a web browser so decided to see what I could create using vanilla HTML/Javascript.
 
 ## Bugs
 
