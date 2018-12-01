@@ -284,26 +284,26 @@
 
 			//Handle SCC Template
 			sccSubject = 'Re: Resource Assignment | ' + clientName + ' (' + srNum + ')';
-			sccBody = serviceName + '\r\n\r\n' + msgGreeting + ' I wanted to reach out to confirm that we have a resource identified for this project (' + icName + ') and that I will be engaging the client to get a kick off call setup ASAP. We look forward to getting this one wrapped up as quickly as we can for you!\r\n\r\n';
+			sccBody = serviceName + ',\r\n\r\n' + msgGreeting + ' I wanted to reach out to confirm that we have a resource identified for this project (' + icName + ') and that I will be engaging the client to get a kick off call setup ASAP. We look forward to getting this one wrapped up as quickly as we can for you!\r\n\r\n';
 			document.getElementById("sccSubject").value = sccSubject;
 			document.getElementById("sccBody").value = sccBody;
 
 			//Handle Client Template
 			clientSubject = 'Re: ' + clientName + ' (' + srNum + ') | ' + shortDesc + ' Project Kickoff';
-			clientBody = contactName + '\r\n\r\n' + msgGreeting + ' I am pleased to let you know that I have assigned a resource to your project and would like to obtain your availability for a kick off call to get this project underway. If you could provide me a few days/times next week that work best for you/your team, I will work to get an invite out.\r\n\r\nWe look forward to getting this project underway for you!\r\n\r\n';
+			clientBody = contactName + ',\r\n\r\n' + msgGreeting + ' I am pleased to let you know that I have assigned a resource to your project and would like to obtain your availability for a kick off call to get this project underway. If you could provide me a few days/times next week that work best for you/your team, I will work to get an invite out.\r\n\r\nWe look forward to getting this project underway for you!\r\n\r\n';
 			document.getElementById("clientSubject").value = clientSubject;
 			document.getElementById("clientBody").value = clientBody;
 
 			//Handle UAT Template
 			uatSubject = 'Re: ' + clientName + ' (' + srNum + ') | ' + shortDesc + ' UAT Approval';
 			//Split uatBody initialize up into 2 steps due to length of string.
-			uatBody = contactName + '\r\n\r\n' + msgGreeting + ' Thank you for the opportunity to partner with you on this request. Please confirm that the configuration has been tested to your satisfaction by approving this UAT email.\r\n\r\n Thank you.\r\n\r\n';
+			uatBody = contactName + ',\r\n\r\n' + msgGreeting + ' Thank you for the opportunity to partner with you on this request. Please confirm that the configuration has been tested to your satisfaction by approving this UAT email.\r\n\r\n Thank you.\r\n\r\n';
 			document.getElementById("uatSubject").value = uatSubject;
 			document.getElementById("uatBody").value = uatBody;
 
 			//Handle Internal Assignment Delay Template
 			internalDelaySubject = 'Re: Project Assignment Delay | ' + clientName + ' (' + srNum + ')';
-			internalDelayBody = serviceName + '\r\n\r\n' + msgGreeting + ' I wanted to follow up on this project. We are diligently working on resource assignment but this project has not been assigned for configuration (yet). We are working as quickly as we can to identify a resource for this one and will reach back out ASAP as soon as we are able to get on aligned. Just to set realistic expectations - there is a bit of work we are working to cut through to reach this one however you have our commitment to work this one in as quickly as we can. We greatly appreciate your continued patience/partnership.\r\n\r\n';
+			internalDelayBody = serviceName + ',\r\n\r\n' + msgGreeting + ' I wanted to follow up on this project. We are diligently working on resource assignment but this project has not been assigned for configuration (yet). We are working as quickly as we can to identify a resource for this one and will reach back out ASAP as soon as we are able to get on aligned. Just to set realistic expectations - there is a bit of work we are working to cut through to reach this one however you have our commitment to work this one in as quickly as we can. We greatly appreciate your continued patience/partnership.\r\n\r\n';
 			document.getElementById("internalDelaySubject").value = internalDelaySubject;
 			document.getElementById("internalDelayBody").value = internalDelayBody;
 
